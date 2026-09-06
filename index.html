@@ -948,29 +948,29 @@
     submitButton.textContent = 'Sending…';
     formNote.textContent = 'Sending your request securely…';
 
-    try {
-      if (!QUOTE_ENDPOINT.startsWith('https://script.google.com/macros/s/')) {
-        throw new Error('Quote system is not connected yet. Please call (941) 888-0574.');
-      }
-      const response = await fetch(QUOTE_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+try {
+  if (!QUOTE_ENDPOINT.startsWith('https://script.google.com/macros/s/')) {
+    throw new Error('Quote system is not connected yet. Please call (941) 888-0574.');
+  }
 
-      const result = await response.json().catch(() => ({}));
+  const response = await fetch(QUOTE_ENDPOINT, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: new URLSearchParams(payload)
+  });
 
-      if (!response.ok) {
-        throw new Error(result.error || 'Unable to send your quote request.');
-      }
+  if (!response.ok && response.type !== 'opaque') {
+    throw new Error('Unable to send your quote request.');
+  }
 
-      form.style.display = 'none';
-      document.getElementById('successMsg').style.display = 'block';
-    } catch (error) {
-      submitButton.disabled = false;
-      submitButton.textContent = 'Request my quote';
-      formNote.textContent = error.message || 'Something went wrong. Please call (941) 888-0574.';
-    }
+  form.style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+
+} catch (error) {
+  submitButton.disabled = false;
+  submitButton.textContent = 'Request my quote';
+  formNote.textContent = error.message || 'Something went wrong. Please call (941) 888-0574.';
+}
   });
 </script>
 
