@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Y&G Junk Removal — Clear Space. First Class.</title>
+<meta name="description" content="White-glove junk removal for homes and businesses. Same-day service, licensed & insured, eco-conscious disposal. Call (941) 888-0574.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;0,9..144,700;1,9..144,450&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0f0d;
+    --ink-2:#101712;
+    --ink-3:#151d17;
+    --forest:#132a1f;
+    --green:#3fcb80;
+    --green-deep:#1f8c55;
+    --green-dim:#1b3327;
+    --bone:#f3f1ea;
+    --bone-dim:#a9b3ac;
+    --line:rgba(243,241,234,0.11);
+    --line-strong:rgba(243,241,234,0.2);
+    --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'Manrope',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    color:var(--bone);
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  ::selection{background:var(--green);color:var(--ink);}
+  :focus-visible{outline:2px solid var(--green);outline-offset:3px;}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 28px;
+    border-radius:2px;
+    font-family:'Manrope',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--green);
+    color:var(--ink);
+  }
+  .btn-primary:hover{background:var(--bone);transform:translateY(-1px);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--bone);
+    border-color:var(--line-strong);
+  }
+  .btn-ghost:hover{border-color:var(--green);color:var(--green);}
+  .btn-block{width:100%;justify-content:center;}
+
+  /* ---------- Nav ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:22px 0;
+    transition:background .3s ease, padding .3s ease, border-color .3s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(10,15,13,0.88);
+    backdrop-filter:blur(10px);
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;}
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Fraunces',serif;font-size:22px;font-weight:600;
+    color:var(--bone);
+  }
+  .logo .mark{width:36px;height:36px;flex:none;}
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{font-size:14.5px;font-weight:600;color:var(--bone-dim);transition:color .2s;}
+  .nav-links a:hover{color:var(--green);}
+  .nav-cta{display:flex;align-items:center;gap:20px;}
+  .nav-phone{font-weight:700;font-size:15px;color:var(--bone);}
+  .nav-phone span{color:var(--green);}
+  .menu-btn{display:none;background:none;border:none;color:var(--bone);cursor:pointer;padding:6px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:190px 0 120px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 900px 500px at 82% -10%, rgba(63,203,128,0.16), transparent 60%),
+      var(--ink);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:60px;
+    align-items:center;
+  }
+  .eyebrow-row{
+    display:flex;align-items:center;gap:12px;
+    margin-bottom:26px;
+    color:var(--bone-dim);
+    font-size:14px;
+    font-weight:600;
+  }
+  .eyebrow-row .dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex:none;box-shadow:0 0 0 4px var(--green-dim);}
+  .hero h1{
+    font-size:clamp(42px,5.4vw,72px);
+    max-width:15ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--green);
+    font-weight:450;
+  }
+  .hero p.lead{
+    margin-top:26px;
+    font-size:19px;
+    color:var(--bone-dim);
+    max-width:46ch;
+  }
+  .hero-actions{
+    margin-top:40px;
+    display:flex;gap:16px;flex-wrap:wrap;
+  }
+  .hero-stats{
+    margin-top:64px;
+    display:flex;gap:44px;
+    flex-wrap:wrap;
+  }
+  .hero-stats div b{
+    display:block;
+    font-family:'Fraunces',serif;
+    font-size:30px;
+    color:var(--bone);
+    font-weight:600;
+  }
+  .hero-stats div span{font-size:13.5px;color:var(--bone-dim);}
+
+  .hero-visual{
+    position:relative;
+    aspect-ratio:4/5;
+  }
+  .hero-visual svg{width:100%;height:100%;}
+
+  /* ---------- Sections generic ---------- */
+  section{padding:120px 0;}
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+    margin-bottom:64px;
+  }
+  .section-head h2{font-size:clamp(30px,3.4vw,44px);max-width:14ch;}
+  .section-head p{color:var(--bone-dim);max-width:38ch;font-size:16px;}
+  .kicker{
+    color:var(--green);
+    font-weight:700;
+    font-size:14px;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  /* ---------- Trust bar ---------- */
+  .trustbar{
+    padding:36px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .trustbar .wrap{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;
+  }
+  .trustbar .item{
+    display:flex;align-items:center;gap:12px;
+    font-size:14.5px;color:var(--bone-dim);font-weight:600;
+  }
+  .trustbar svg{width:20px;height:20px;flex:none;color:var(--green);}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--ink);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    grid-template-rows:auto auto;
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--ink);
+    padding:40px;
+    display:flex;flex-direction:column;
+    gap:18px;
+    transition:background .3s ease;
+  }
+  .service-card:hover{background:var(--ink-3);}
+  .service-card.feature{grid-row:span 2;justify-content:space-between;}
+  .service-num{font-family:'Fraunces',serif;font-size:14px;color:var(--green);letter-spacing:0.02em;}
+  .service-card h3{font-size:23px;font-weight:600;}
+  .service-card.feature h3{font-size:30px;}
+  .service-card p{color:var(--bone-dim);font-size:15px;max-width:34ch;}
+  .service-icon{width:34px;height:34px;color:var(--green);}
+  .service-tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+  .service-tag-list span{
+    border:1px solid var(--line-strong);
+    padding:6px 12px;
+    border-radius:2px;
+    font-size:12.5px;
+    color:var(--bone-dim);
+  }
+
+  /* ---------- Process ---------- */
+  .process{background:var(--forest);}
+  .process-list{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+  }
+  .process-item{
+    padding:36px 28px 0;
+    border-right:1px solid var(--line);
+    position:relative;
+  }
+  .process-item:last-child{border-right:none;}
+  .process-item .step-num{
+    font-family:'Fraunces',serif;
+    font-size:15px;
+    color:var(--green);
+    margin-bottom:22px;
+    display:block;
+  }
+  .process-item h3{font-size:20px;margin-bottom:10px;}
+  .process-item p{color:var(--bone-dim);font-size:14.5px;max-width:26ch;}
+
+  /* ---------- Why us ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:44px;
+  }
+  .why-item svg{width:30px;height:30px;color:var(--green);margin-bottom:22px;}
+  .why-item h3{font-size:19px;margin-bottom:10px;font-weight:600;}
+  .why-item p{color:var(--bone-dim);font-size:14.5px;}
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .test-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .test-card{
+    background:var(--ink-2);
+    padding:38px;
+    display:flex;flex-direction:column;
+    gap:22px;
+  }
+  .stars{display:flex;gap:4px;color:var(--green);}
+  .stars svg{width:16px;height:16px;}
+  .test-card p.quote{font-size:16px;color:var(--bone);font-family:'Fraunces',serif;font-weight:450;font-style:italic;line-height:1.5;}
+  .test-name{font-size:14px;color:var(--bone-dim);font-weight:600;}
+  .test-name span{color:var(--bone);}
+
+  /* ---------- Coverage ---------- */
+  .coverage{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+  }
+  .coverage-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 30px;
+    margin-top:28px;
+  }
+  .coverage-list div{
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+    font-size:15px;
+    color:var(--bone-dim);
+    display:flex;justify-content:space-between;
+  }
+  .coverage-list div b{color:var(--bone);font-weight:600;}
+  .coverage-visual{position:relative;aspect-ratio:1/1;}
+  .coverage-visual svg{width:100%;height:100%;}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--forest);}
+  .faq-list{border-top:1px solid var(--line);max-width:820px;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;
+    background:none;border:none;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 0;
+    cursor:pointer;
+    color:var(--bone);
+    font-family:'Fraunces',serif;
+    font-size:19px;
+    text-align:left;
+    gap:20px;
+  }
+  .faq-q .plus{
+    flex:none;width:22px;height:22px;position:relative;
+  }
+  .faq-q .plus::before,.faq-q .plus::after{
+    content:'';position:absolute;background:var(--green);
+    top:50%;left:50%;transform:translate(-50%,-50%);
+  }
+  .faq-q .plus::before{width:16px;height:2px;}
+  .faq-q .plus::after{width:2px;height:16px;transition:transform .25s ease;}
+  .faq-item.open .plus::after{transform:translate(-50%,-50%) rotate(90deg) scale(0);}
+  .faq-a{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+  }
+  .faq-a p{padding-bottom:28px;color:var(--bone-dim);max-width:60ch;font-size:15.5px;}
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{
+    background:var(--green);
+    color:var(--ink);
+    padding:100px 0;
+  }
+  .final-cta .wrap{
+    display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;
+  }
+  .final-cta h2{color:var(--ink);font-size:clamp(30px,3.6vw,46px);max-width:14ch;}
+  .final-cta p{color:var(--ink);opacity:.75;margin-top:14px;max-width:40ch;}
+  .final-cta .btn-primary{background:var(--ink);color:var(--bone);}
+  .final-cta .btn-primary:hover{background:#000;}
+  .final-cta .btn-ghost{border-color:rgba(10,15,13,0.3);color:var(--ink);}
+  .final-cta .btn-ghost:hover{border-color:var(--ink);}
+
+  /* ---------- Quote form ---------- */
+  .quote-section{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:70px;
+  }
+  .quote-form{
+    background:var(--ink-2);
+    border:1px solid var(--line);
+    padding:44px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13px;color:var(--bone-dim);margin-bottom:8px;font-weight:600;}
+  .field input,.field select,.field textarea{
+    width:100%;
+    background:var(--ink);
+    border:1px solid var(--line-strong);
+    color:var(--bone);
+    padding:13px 14px;
+    font-family:'Manrope',sans-serif;
+    font-size:14.5px;
+    border-radius:2px;
+    transition:border-color .2s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);outline:none;}
+  .field textarea{resize:vertical;min-height:90px;}
+  .form-note{font-size:13px;color:var(--bone-dim);margin-top:14px;text-align:center;}
+  .success-msg{
+    display:none;
+    text-align:center;
+    padding:30px 10px;
+  }
+  .success-msg svg{width:44px;height:44px;color:var(--green);margin:0 auto 18px;}
+  .success-msg h3{font-size:22px;margin-bottom:8px;}
+  .success-msg p{color:var(--bone-dim);font-size:14.5px;}
+
+  /* ---------- Footer ---------- */
+  footer{padding:70px 0 34px;border-top:1px solid var(--line);}
+  .footer-top{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:50px;
+    border-bottom:1px solid var(--line);
+  }
+  .footer-brand .logo{margin-bottom:16px;}
+  .footer-brand p{color:var(--bone-dim);font-size:14.5px;max-width:32ch;}
+  .footer-col h4{font-size:13px;color:var(--bone-dim);font-weight:700;margin-bottom:18px;letter-spacing:0.02em;}
+  .footer-col a,.footer-col p{display:block;font-size:14.5px;color:var(--bone-dim);margin-bottom:12px;transition:color .2s;}
+  .footer-col a:hover{color:var(--green);}
+  .footer-bottom{
+    padding-top:28px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-size:13px;color:var(--bone-dim);
+  }
+
+  /* ---------- Sticky mobile call ---------- */
+  .sticky-call{
+    display:none;
+    position:fixed;bottom:0;left:0;right:0;z-index:90;
+    background:var(--green);
+    color:var(--ink);
+    text-align:center;
+    padding:16px;
+    font-weight:700;
+    font-size:15px;
+  }
+
+  /* ---------- Hero entrance animation ---------- */
+  .reveal{opacity:0;transform:translateY(16px);animation:reveal .7s ease forwards;}
+  @keyframes reveal{to{opacity:1;transform:translateY(0);}}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{animation:none;opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{display:none;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .service-card.feature{grid-row:auto;grid-column:span 2;}
+    .process-list{grid-template-columns:1fr 1fr;}
+    .process-item{border-bottom:1px solid var(--line);padding-bottom:30px;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .test-grid{grid-template-columns:1fr;}
+    .coverage{grid-template-columns:1fr;}
+    .coverage-visual{max-width:340px;margin:0 auto;}
+    .quote-section{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:720px){
+    .nav-links{display:none;}
+    .menu-btn{display:block;}
+    .nav-phone span.full{display:none;}
+    section{padding:80px 0;}
+    .hero{padding:150px 0 80px;}
+    .section-head{flex-direction:column;align-items:flex-start;}
+    .service-grid{grid-template-columns:1fr;}
+    .service-card.feature{grid-column:auto;}
+    .process-list{grid-template-columns:1fr;}
+    .process-item{border-right:none;}
+    .why-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .final-cta .wrap{flex-direction:column;align-items:flex-start;}
+    .footer-top{grid-template-columns:1fr;gap:36px;}
+    .sticky-call{display:block;}
+    body{padding-bottom:56px;}
+    .trustbar .wrap{justify-content:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="siteHeader">
+  <nav class="wrap">
+    <a href="#top" class="logo">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" stroke="#3fcb80" stroke-width="1.4"/>
+        <path d="M11 24C14 17 18 13 25 12" stroke="#3fcb80" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M15 27C19 22 24 19 29 19" stroke="#f3f1ea" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      Y&amp;G
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#why">Why Y&amp;G</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:19418880574"><span class="full">Call </span><span>(941) 888-0574</span></a>
+      <a href="#quote" class="btn btn-primary">Get a Quote</a>
+    </div>
+    <button class="menu-btn" aria-label="menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow-row reveal" style="animation-delay:.05s"><span class="dot"></span>Southwest Florida's white-glove hauling crew</div>
+      <h1 class="reveal" style="animation-delay:.15s">Your space, <em>reclaimed</em> by tonight.</h1>
+      <p class="lead reveal" style="animation-delay:.25s">Y&amp;G Junk Removal shows up on time, in uniform, and treats your home like it's the last stop of the day, not the fifth. Point at what goes. We do the rest — lifting, loading, sweeping up.</p>
+      <div class="hero-actions reveal" style="animation-delay:.35s">
+        <a href="tel:19418880574" class="btn btn-primary">Call (941) 888-0574</a>
+        <a href="#quote" class="btn btn-ghost">Get a Free Quote</a>
+      </div>
+      <div class="hero-stats reveal" style="animation-delay:.45s">
+        <div><b>Same-day</b><span>Booking to bare floor</span></div>
+        <div><b>1,200+</b><span>Properties cleared</span></div>
+        <div><b>85%</b><span>Diverted from landfill</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal" style="animation-delay:.3s">
+      <svg viewBox="0 0 420 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="419" height="519" rx="1" stroke="#f3f1ea" stroke-opacity="0.1"/>
+        <circle cx="210" cy="240" r="150" stroke="#1f8c55" stroke-width="1"/>
+        <circle cx="210" cy="240" r="110" stroke="#1f8c55" stroke-width="1"/>
+        <path d="M60 340C120 260 160 180 260 150C300 138 340 140 370 150" stroke="#3fcb80" stroke-width="2" stroke-linecap="round"/>
+        <path d="M40 200C90 210 130 190 155 150" stroke="#f3f1ea" stroke-opacity="0.35" stroke-width="1.4" stroke-linecap="round"/>
+        <rect x="150" y="330" width="120" height="80" stroke="#f3f1ea" stroke-opacity="0.5" stroke-width="1.4"/>
+        <rect x="170" y="300" width="80" height="30" stroke="#3fcb80" stroke-width="1.4"/>
+        <circle cx="330" cy="380" r="26" stroke="#f3f1ea" stroke-opacity="0.5" stroke-width="1.4"/>
+        <circle cx="330" cy="380" r="8" fill="#3fcb80"/>
+        <text x="60" y="450" fill="#a9b3ac" font-family="Manrope" font-size="12" letter-spacing="1">EST. LOCAL &amp; FAMILY-RUN</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST BAR ================= -->
+<div class="trustbar">
+  <div class="wrap">
+    <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Licensed &amp; insured</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Upfront, flat-rate pricing</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Same-day &amp; next-day slots</div>
+    <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Donation &amp; recycling first</div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="kicker">Services</span>
+        <h2>One crew, every kind of clutter.</h2>
+      </div>
+      <p>From a single stubborn couch to a full estate, we scope the job over the phone or in person and quote it before we lift a finger.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card feature">
+        <div>
+          <span class="service-num">Most requested</span>
+          <h3>Residential Junk Removal</h3>
+          <p>Garages, attics, basements, sheds — the rooms that quietly filled up over a decade. We sort, haul, and leave the space swept.</p>
+          <div class="service-tag-list">
+            <span>Furniture</span><span>Appliances</span><span>Electronics</span><span>Mattresses</span><span>Hot tubs</span>
+          </div>
+        </div>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v9a1 1 0 001 1h12a1 1 0 001-1v-9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Estate &amp; Move-Out Clearing</h3>
+        <p>Closing a chapter shouldn't mean sorting alone. We clear a property top to bottom on a set date, ready for showing.</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none"><path d="M3 7h13v10H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 10h3l2 3v4h-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7" cy="18" r="1.6" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="18" r="1.6" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h3>Commercial &amp; Office</h3>
+        <p>Cubicle teardown, warehouse pallets, retail resets. Scheduled after hours so business doesn't stop.</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 20V10l6-6 6 6v10" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20v-5h4v5" stroke="currentColor" stroke-width="1.6"/></svg>
+        <h3>Construction Debris</h3>
+        <p>Drywall, flooring, fixtures, and job-site leftovers hauled between phases, not left for the punch list.</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none"><path d="M12 3c3 4 6 6.5 6 10.5A6 6 0 116 13.5C6 9.5 9 7 12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <h3>Yard &amp; Storm Debris</h3>
+        <p>Branches, palm fronds, old sheds, fencing. We clear the yard so the next storm isn't your problem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="kicker">How it works</span>
+        <h2>Four steps. No surprises.</h2>
+      </div>
+      <p>The whole job, from first call to empty space, usually wraps same day.</p>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0;">
+    <div class="process-list">
+      <div class="process-item">
+        <span class="step-num">01</span>
+        <h3>You call or click</h3>
+        <p>Tell us what's going and send a photo if it's easy. We give a flat price on the spot.</p>
+      </div>
+      <div class="process-item">
+        <span class="step-num">02</span>
+        <h3>We show up on time</h3>
+        <p>Uniformed crew, marked truck, a text when we're ten minutes out.</p>
+      </div>
+      <div class="process-item">
+        <span class="step-num">03</span>
+        <h3>We point, lift, load</h3>
+        <p>You don't touch a thing. We protect floors and doorways on the way out.</p>
+      </div>
+      <div class="process-item">
+        <span class="step-num">04</span>
+        <h3>We sweep &amp; sort</h3>
+        <p>Space swept clean. Usable items donated, the rest recycled where possible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="kicker">Why Y&amp;G</span>
+        <h2>Junk removal, held to a higher standard.</h2>
+      </div>
+      <p>We built Y&amp;G on the idea that hauling junk doesn't have to feel like a hassle to deal with.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <h3>Flat, upfront pricing</h3>
+        <p>You get a number before we start — by volume, not by guesswork or surprise fees.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 11-3.5-2.5-7-6-7-11V5l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <h3>Licensed &amp; fully insured</h3>
+        <p>Your home, floors, and doorways are protected the entire time we're on site.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 4v9a5 5 0 005 5h6M4 13h4M4 9h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 4v9a5 5 0 01-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <h3>Donation &amp; recycling first</h3>
+        <p>We sort every load before the landfill is even an option — most jobs divert over 80%.</p>
+      </div>
+      <div class="why-item">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <h3>Same-day availability</h3>
+        <p>Most calls booked before noon are cleared before dinner. Nights and weekends, too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="kicker">Reviews</span>
+        <h2>What the neighborhood says.</h2>
+      </div>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0;">
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+        </div>
+        <p class="quote">"Two guys, ninety minutes, my entire garage was empty and swept. They even wiped down the shelves before they left."</p>
+        <div class="test-name"><span>Marisol T.</span> — Cape Coral</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+        </div>
+        <p class="quote">"Quoted a flat price over text before they even arrived. No upsell once the truck was in the driveway. Booking again for the office cleanout."</p>
+        <div class="test-name"><span>Derek W.</span> — Fort Myers</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2L4.6 17.3l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+        </div>
+        <p class="quote">"Handled my mother's estate with more care than I expected. They set aside photos and keepsakes without even being asked."</p>
+        <div class="test-name"><span>Angela P.</span> — North Fort Myers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COVERAGE ================= -->
+<section id="coverage">
+  <div class="wrap coverage">
+    <div>
+      <span class="kicker">Service area</span>
+      <h2>Rolling through Southwest Florida.</h2>
+      <p style="color:var(--bone-dim);margin-top:16px;max-width:44ch;">If you're within the loop, we can usually be there today. Just outside it? Call anyway — we still cover most surrounding routes.</p>
+      <div class="coverage-list">
+        <div>Cape Coral <b>Same-day</b></div>
+        <div>Fort Myers <b>Same-day</b></div>
+        <div>North Fort Myers <b>Same-day</b></div>
+        <div>Lehigh Acres <b>Next-day</b></div>
+        <div>Estero <b>Next-day</b></div>
+        <div>Bonita Springs <b>Next-day</b></div>
+      </div>
+    </div>
+    <div class="coverage-visual">
+      <svg viewBox="0 0 300 300" fill="none">
+        <circle cx="150" cy="150" r="140" stroke="#1f8c55" stroke-width="1"/>
+        <circle cx="150" cy="150" r="100" stroke="#1f8c55" stroke-width="1"/>
+        <circle cx="150" cy="150" r="60" stroke="#1f8c55" stroke-width="1"/>
+        <circle cx="150" cy="150" r="5" fill="#3fcb80"/>
+        <circle cx="190" cy="110" r="4" fill="#f3f1ea"/>
+        <circle cx="100" cy="130" r="4" fill="#f3f1ea"/>
+        <circle cx="130" cy="205" r="4" fill="#f3f1ea"/>
+        <circle cx="215" cy="190" r="4" fill="#f3f1ea" fill-opacity="0.5"/>
+        <circle cx="80" cy="200" r="4" fill="#f3f1ea" fill-opacity="0.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="kicker">FAQ</span>
+        <h2>Good to know before we roll up.</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q">How is pricing worked out?<span class="plus"></span></button>
+        <div class="faq-a"><p>Pricing is based on how much space your items take up in our truck, not by the piece. We quote a flat number before starting — never by the hour, never with hidden fees added after.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I need to move anything myself?<span class="plus"></span></button>
+        <div class="faq-a"><p>No. Point at what goes and our crew handles the lifting, carrying, and loading. We bring furniture dollies and floor protection for anything heavy or awkward.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What happens to my stuff after pickup?</button>
+        <div class="faq-a"><p>Everything gets sorted at our facility. Usable furniture and appliances go to local donation partners, metal and e-waste get recycled, and only what's left heads to disposal.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can you take items on short notice?<span class="plus"></span></button>
+        <div class="faq-a"><p>Most calls placed before noon get cleared the same afternoon. Call the number above and we'll tell you honestly whether today is possible.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you handle hazardous materials?<span class="plus"></span></button>
+        <div class="faq-a"><p>We don't take paint, chemicals, or medical waste, but we're happy to point you to the right local disposal facility for those items.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTE ================= -->
+<section id="quote">
+  <div class="wrap quote-section">
+    <div>
+      <span class="kicker">Get a quote</span>
+      <h2>Tell us what needs to go.</h2>
+      <p style="color:var(--bone-dim);margin-top:16px;max-width:44ch;">Fill this out and we'll text or call back with a flat quote — usually within the hour, during business hours. Prefer to talk now?</p>
+      <a href="tel:19418880574" class="btn btn-primary" style="margin-top:26px;">Call (941) 888-0574</a>
+    </div>
+    <div class="quote-form">
+      <form id="quoteForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="fname">First name</label>
+            <input type="text" id="fname" required>
+          </div>
+          <div class="field">
+            <label for="lname">Last name</label>
+            <input type="text" id="lname" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" required>
+          </div>
+          <div class="field">
+            <label for="service">Service needed</label>
+            <select id="service">
+              <option>Residential junk removal</option>
+              <option>Estate / move-out clearing</option>
+              <option>Commercial / office</option>
+              <option>Construction debris</option>
+              <option>Yard / storm debris</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="details">What needs to go?</label>
+          <textarea id="details" placeholder="e.g. Full garage, old couch, a few appliances..."></textarea>
+        </div>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0" aria-hidden="true">
+    <button type="submit" class="btn btn-primary btn-block">Request my quote</button>
+        <p class="form-note">No spam, no obligation — just a straight number.</p>
+      </form>
+      <div class="success-msg" id="successMsg">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Got it — thank you.</h3>
+        <p>We'll be in touch shortly to lock in your quote. Need it faster? Call (941) 888-0574.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final-cta">
+  <div class="wrap">
+    <div>
+      <h2>Ready to clear it out?</h2>
+      <p>Same-day slots go quick — call now and get a flat quote in minutes.</p>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="tel:19418880574" class="btn btn-primary">Call (941) 888-0574</a>
+      <a href="#quote" class="btn btn-ghost">Request a Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="logo">
+          <svg class="mark" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#3fcb80" stroke-width="1.4"/><path d="M11 24C14 17 18 13 25 12" stroke="#3fcb80" stroke-width="1.6" stroke-linecap="round"/><path d="M15 27C19 22 24 19 29 19" stroke="#f3f1ea" stroke-width="1.6" stroke-linecap="round"/></svg>
+          Y&amp;G
+        </a>
+        <p>White-glove junk removal for Southwest Florida homes and businesses. Licensed, insured, and easy on the planet.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#why">Why Y&amp;G</a>
+        <a href="#testimonials">Reviews</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Residential</a>
+        <a href="#services">Estate &amp; move-out</a>
+        <a href="#services">Commercial</a>
+        <a href="#services">Construction debris</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:19418880574">(941) 888-0574</a>
+        <p>Mon–Sat, 7am–7pm</p>
+        <p>Serving Cape Coral &amp; SWFL</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Y&amp;G Junk Removal. All rights reserved.</span>
+      <span>Licensed &amp; insured · Family owned</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call">
+  <a href="tel:19418880574">Call now — (941) 888-0574</a>
+</div>
+
+<script>
+  // Quote backend: after deploying apps-script/Code.gs, paste the /exec URL here.
+  const QUOTE_ENDPOINT = 'PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+</script>
+<script>
+  // Header background on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if(item.classList.contains('open')){
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = 0;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Quote form — sends the request to the secure server endpoint.
+  const form = document.getElementById('quoteForm');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const formNote = form.querySelector('.form-note');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      firstName: document.getElementById('fname').value.trim(),
+      lastName: document.getElementById('lname').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      service: document.getElementById('service').value,
+      details: document.getElementById('details').value.trim(),
+      website: document.getElementById('website').value.trim()
+    };
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending…';
+    formNote.textContent = 'Sending your request securely…';
+
+    try {
+      if (!QUOTE_ENDPOINT.startsWith('https://script.google.com/macros/s/')) {
+        throw new Error('Quote system is not connected yet. Please call (941) 888-0574.');
+      }
+      const response = await fetch(QUOTE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Unable to send your quote request.');
+      }
+
+      form.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    } catch (error) {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Request my quote';
+      formNote.textContent = error.message || 'Something went wrong. Please call (941) 888-0574.';
+    }
+  });
+</script>
+
+</body>
+</html>
